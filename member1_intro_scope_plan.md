@@ -74,7 +74,7 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Repository:</strong> https://github.com/mrzetoon/team-01-QRRestaurantOrder (owner @mrzetoon; instructor and TA added as collaborators: <mark>[GitHub usernames]</mark>).</p>
+<td><p><strong>Repository:</strong> https://github.com/mrzetoon/team-01-QRRestaurantOrder (owner @mrzetoon)</mark>).</p>
 <p><strong>Branches:</strong> main is protected and only changes through pull requests; work happens on feature/&lt;issue-number&gt;-&lt;short-name&gt;. Each pull request needs one review from another member before merge.</p>
 <p><strong>Commits:</strong> start with the requirement or issue they touch, e.g. "FR-07: tag order with table number (#12)".</p>
 <p><strong>Issues:</strong> every task, requirement change and team decision is an issue, labelled requirement, doc, bug, spike or decision, with an assignee and due date.</p>
