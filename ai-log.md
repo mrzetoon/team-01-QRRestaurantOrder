@@ -2,4 +2,4 @@
 
 | Date | Tool | Who | What it was used for | How the output was checked |
 |---|---|---|---|---|
-| 2026-10-16 to 2026-10-18 | Claude (Anthropic) | Mohmmad Abuzetoon | First draft of P1 content and diagrams from our project description | Team reviewed each requirement for testability, rewrote stakeholder sources, verified references |
+| 2026-10-16 to 2026-10-18 | Claude (Anthropic) | ALL TEAM-01 | First draft of P1 content and diagrams from our project description | Team reviewed each requirement for testability, rewrote stakeholder sources, verified references |
