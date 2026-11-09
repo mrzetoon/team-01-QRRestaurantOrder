@@ -60,7 +60,7 @@
 
 ### 5.4 UC-07 Pay Bill — scenario table and analysis sequence diagram
 
-**Trivial steps (no row):** (0) the status page already holds the orders; (8) the customer reads. **Outside our system (no row):** (5) the customer types card details on the gateway's page. **Non-trivial:** (1)–(4) build and show the bill; (6) record the result and mark orders paid; (7) show the receipt.
+**Trivial steps (no row):** (0) the status page already holds the orders; (8) the customer reads. **Outside our system (no row):** (5) the customer types card details on the gateway's page. **Non-trivial:** (1)–(4) build and show the bill; (6) record the result and mark orders paid; (7) show the receipt.</p></td>
 <img width="693" height="274" alt="member04_UC-07_scenario_table" src="https://github.com/user-attachments/assets/ff81ee59-f292-4028-b4b6-620d3b07b76e" />
 
 
