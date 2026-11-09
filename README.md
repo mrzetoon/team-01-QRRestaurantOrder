@@ -61,20 +61,8 @@
 ### 5.4 UC-07 Pay Bill — scenario table and analysis sequence diagram
 
 **Trivial steps (no row):** (0) the status page already holds the orders; (8) the customer reads. **Outside our system (no row):** (5) the customer types card details on the gateway's page. **Non-trivial:** (1)–(4) build and show the bill; (6) record the result and mark orders paid; (7) show the receipt.
+<img width="693" height="274" alt="member04_UC-07_scenario_table" src="https://github.com/user-attachments/assets/ff81ee59-f292-4028-b4b6-620d3b07b76e" />
 
-| **Step** | **Subject**    | **Subject action**                                 | **Other data / objects**                  | **Object acted upon** |
-|----------|----------------|----------------------------------------------------|-------------------------------------------|-----------------------|
-| 1        | Customer       | chooses to pay                                     | —                                         | TableMenu             |
-| 2        | TableMenu      | asks for the bill of this table session            | table session                             | OrderBook             |
-| 3        | OrderBook      | collects the unpaid orders and totals them         | unpaid orders                             | Bill                  |
-| 4        | TableMenu      | shows the unpaid orders and the amount due         | bill                                      | Customer              |
-| 5        | Customer       | confirms the amount                                | amount due                                | TableMenu             |
-| 6        | TableMenu      | asks to take the amount for this bill              | amount, bill reference                    | PaymentGateway        |
-| 7        | PaymentGateway | reports the payment approved                       | bill reference, gateway reference, amount | TableMenu             |
-| 8        | TableMenu      | asks to record the payment on the bill             | bill, gateway reference, amount           | OrderBook             |
-| 9        | OrderBook      | records an approved payment                        | amount, reference, time                   | Payment               |
-| 10       | OrderBook      | marks the bill's orders Paid                       | bill                                      | Bill                  |
-| 11       | TableMenu      | shows the receipt: amount, time, reference, orders | payment                                   | Customer              |
 
 <table>
 <colgroup>
@@ -82,7 +70,8 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><img src="media/image5.png" style="width:6.9in;height:4.13865in" /></p>
+<img width="1620" height="1010" alt="member04_UC07_sequence_diagram" src="https://github.com/user-attachments/assets/24ed8666-e1c0-4f4c-b7dd-1750eb773991" />
+
 <p><strong>Figure 5. UC-07 analysis sequence diagram.</strong> Messages 1–11 match the table rows; names are short forms of each row's action. The PaymentGateway is outside our boundary: we send it the amount (6) and it reports the result (7); its card handling is not modelled. Orders become Paid only at 10, after an approved result (FR-17).</p></td>
 </tr>
 </tbody>
