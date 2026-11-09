@@ -72,7 +72,6 @@
 <tr class="odd">
 <img width="1620" height="1010" alt="member04_UC07_sequence_diagram" src="https://github.com/user-attachments/assets/24ed8666-e1c0-4f4c-b7dd-1750eb773991" />
 
-<p><strong>Figure 5. UC-07 analysis sequence diagram.</strong> Messages 1–11 match the table rows; names are short forms of each row's action. The PaymentGateway is outside our boundary: we send it the amount (6) and it reports the result (7); its card handling is not modelled. Orders become Paid only at 10, after an approved result (FR-17).</p></td>
 </tr>
 </tbody>
 </table>
