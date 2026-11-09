@@ -14,7 +14,7 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><img src="media/image3.png" style="width:6.9in;height:2.09448in" /></p>
+<img width="2027" height="869" alt="conceptual_domain_model" src="https://github.com/user-attachments/assets/54a1eb6b-6c57-4a65-9f61-3529e91d63bd" />
 <p><strong>Figure 3. Conceptual domain model (analysis), revised after the interview.</strong> Fifteen concepts with attributes and multiplicities, no operations and no technology. The payment gateway is outside our boundary and is not modelled: we keep only what it tells us (Payment.result and gatewayReference). A TableCheck groups every order of a table session (CR-11) and is what a Bill is drawn from; the Cart belongs to the table session, so all phones at the table share it (CR-17). A declined attempt is still a Payment, which is why a Bill has 0..* payments.</p></td>
 </tr>
 </tbody>
