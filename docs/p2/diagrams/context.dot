@@ -1,0 +1,33 @@
+digraph G {
+  graph [rankdir=LR, bgcolor=white, pad=0.3, nodesep=0.5, ranksep=1.3, fontname="Helvetica", dpi=200];
+  node [fontname="Helvetica", fontsize=11];
+  edge [fontname="Helvetica", fontsize=9, color="#444444"];
+
+  cust  [label="Customer\n(diner at a table)", shape=box, style="rounded,filled", fillcolor="#E8F0FB", color="#3B6FB6"];
+  staff [label="Staff\n(server / kitchen)", shape=box, style="rounded,filled", fillcolor="#E8F0FB", color="#3B6FB6"];
+  mgr   [label="Manager\n(restaurant owner)", shape=box, style="rounded,filled", fillcolor="#E8F0FB", color="#3B6FB6"];
+
+  sys [label="QR Code Restaurant Menu\n& Ordering System\n(QRMOS)", shape=box, style="filled,bold", fillcolor="#1F3A5F", fontcolor=white, fontsize=13, width=2.6, height=1.4];
+
+  qr   [label="Phone camera /\nQR reader app\n«external system»", shape=box, style="dashed", color="#777777"];
+  host [label="Cloud hosting &\ndatabase service\n(paid plan, ~$50/month)\n«external system»", shape=box, style="dashed", color="#777777"];
+  pay  [label="Payment gateway\n(hosted checkout)\n«external system»", shape=box, style="dashed", color="#B26A00", fontcolor="#7A4A00"];
+  pos  [label="Existing POS /\naccounting\n«external — NOT connected»", shape=box, style="dashed", color="#B03A2E", fontcolor="#B03A2E"];
+
+  qr -> cust [label="decodes table URL", arrowhead=normal];
+  cust -> sys [label="menu requests, cart,\norder submission"];
+  sys -> cust [label="menu, order confirmation,\norder status"];
+  staff -> sys [label="login, status updates,\nsold-out flags"];
+  sys -> staff [label="live order queue"];
+  mgr -> sys [label="menu edits, table setup,\nstaff accounts"];
+  sys -> mgr [label="QR code images\n(to print)"];
+  sys -> host [label="save new orders, status changes,\nmenu edits, accounts"];
+  host -> sys [label="return menu items,\norders, account records"];
+  sys -> pay [label="payment request\n(amount, order ref)"];
+  pay -> sys [label="payment result\n(approved / declined)"];
+  cust -> pay [label="card details\n(entered on gateway page only)", style=dashed];
+  sys -> pos [label="no interface\n(POS integration out of scope)", style=dashed, color="#B03A2E", fontcolor="#B03A2E", arrowhead=none];
+
+  {rank=same; cust; staff; mgr; qr}
+  {rank=same; host; pay; pos}
+}
