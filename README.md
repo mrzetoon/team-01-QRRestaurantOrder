@@ -43,28 +43,7 @@
 ### 5.3 UC-01 Place Order — scenario table and analysis sequence diagram
 
 **Trivial steps (no row):** (0) the card is physical; (3), (9) the customer only selects; (4), (10) show data the TableMenu already holds; (15) the customer reads. **Non-trivial:** (1)–(2) open the table and fetch the menu; (5)–(8) price and add a line; (11)–(14) check, record and queue the order.
-
-| **Step** | **Subject** | **Subject action**                                               | **Other data / objects**                  | **Object acted upon** |
-|----------|-------------|------------------------------------------------------------------|-------------------------------------------|-----------------------|
-| 1        | Customer    | opens the menu for the table                                     | table link                                | TableMenu             |
-| 2        | TableMenu   | asks whether the table is taking orders                          | table number                              | Table                 |
-| 3        | TableMenu   | asks for the categories, items, prices and availability          | —                                         | Menu                  |
-| 4        | TableMenu   | shows the table number, the menu and an empty cart               | menu                                      | Customer              |
-| 5        | Customer    | chooses options, quantity and a note for an item                 | options, quantity, note                   | TableMenu             |
-| 6        | TableMenu   | asks the item for its price with those options                   | options, quantity                         | MenuItem              |
-| 7        | TableMenu   | shows the line price                                             | line price                                | Customer              |
-| 8        | Customer    | adds the line to the cart                                        | —                                         | TableMenu             |
-| 9        | TableMenu   | adds the line                                                    | item, options, quantity, note, line price | Cart                  |
-| 10       | Cart        | recalculates the total                                           | lines                                     | Cart (itself)         |
-| 11       | TableMenu   | shows the number of lines and the total                          | total                                     | Customer              |
-| 12       | Customer    | submits the cart                                                 | —                                         | TableMenu             |
-| 13       | TableMenu   | asks whether every item is still available                       | items in the cart                         | Menu                  |
-| 14       | TableMenu   | asks whether the table still takes orders                        | table number                              | Table                 |
-| 15       | TableMenu   | asks to record an order for the table                            | table number, lines, total                | OrderBook             |
-| 16       | OrderBook   | gives the order the next number and status Awaiting confirmation | —                                         | OrderBook (itself)    |
-| 17       | OrderBook   | places the order at the end of the queue                         | order                                     | StaffQueue            |
-| 18       | TableMenu   | empties the cart                                                 | —                                         | Cart                  |
-| 19       | TableMenu   | shows the confirmation: number, lines, total, status             | order number, status                      | Customer              |
+<img width="1650" height="953" alt="member04_UC-01_scenario_table" src="https://github.com/user-attachments/assets/9a2e96a6-5f1b-429b-8374-28facde3b973" />
 
 <table>
 <colgroup>
