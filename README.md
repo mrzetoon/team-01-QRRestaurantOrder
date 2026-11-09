@@ -51,7 +51,8 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><img src="media/image4.png" style="width:6.9in;height:5.73317in" /></p>
+<img width="1607" height="979" alt="member04_UC-01_sequence_diagram" src="https://github.com/user-attachments/assets/5b2485f1-83ec-45cc-a1ca-6ddff83debf2" />
+
 <p><strong>Figure 4. UC-01 analysis sequence diagram.</strong> Messages 1–19 match the table rows one for one; each message name is a short form of that row's action. TableMenu is in control throughout; returns are dashed and unnumbered. Rows 10 and 16 are self-calls (case D). OrderBook stays active from message 15 until it returns the order number, after placing the order in the StaffQueue (17).</p></td>
 </tr>
 </tbody>
