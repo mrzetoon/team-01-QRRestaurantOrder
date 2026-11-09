@@ -37,18 +37,8 @@
 
 ### 5.2 Analysis objects
 
-| **Object**     | **What it is for (one line)**                                                               | **Inside?** | **Domain concept**                  |
-|----------------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|
-| TableMenu      | Runs ordering and paying for one table on the diner's phone; in control of UC-01 and UC-07. | Inside      | TableSession                        |
-| Table          | Says whether this table is taking orders.                                                   | Inside      | Table                               |
-| Menu           | Holds the categories and items with prices and availability.                                | Inside      | Menu, MenuCategory                  |
-| MenuItem       | Knows its price and how each option changes it.                                             | Inside      | MenuItem, Option                    |
-| Cart           | Holds the lines every phone at the table has chosen and their total, until submitted.       | Inside      | Cart, CartLine                      |
-| OrderBook      | Keeps every order, numbers new ones, and builds bills.                                      | Inside      | Order, OrderLine                    |
-| StaffQueue     | The active orders as staff see them, grouped by table check, oldest first.                  | Inside      | TableCheck, Order (status ≠ Served) |
-| Bill           | The unpaid orders of one table session and their total.                                     | Inside      | Bill                                |
-| Payment        | One payment attempt and its result.                                                         | Inside      | Payment                             |
-| PaymentGateway | Takes the card payment and reports the result.                                              | Outside     | — (supporting actor)                |
+<img width="771" height="446" alt="Screenshot 2026-11-08 at 20 12 11" src="https://github.com/user-attachments/assets/f37efa12-9473-4f8a-b228-0810b809ee80" />
+
 
 ### 5.3 UC-01 Place Order — scenario table and analysis sequence diagram
 
