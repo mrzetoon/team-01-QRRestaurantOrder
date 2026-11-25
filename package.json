@@ -1,0 +1,29 @@
+{
+  "name": "qrmos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QR Code Restaurant Menu & Ordering System \u2014 CS 3354 Fall 2026, Team 01",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/server.js",
+    "seed": "node --no-warnings=ExperimentalWarning scripts/seed.js",
+    "demo": "node --no-warnings=ExperimentalWarning scripts/seed.js --reset && node --no-warnings=ExperimentalWarning src/server.js",
+    "test": "node --no-warnings=ExperimentalWarning --test --test-concurrency=1 --test-timeout=20000 --test-force-exit \"tests/**/*.test.js\"",
+    "coverage": "node --no-warnings=ExperimentalWarning --test --test-concurrency=1 --test-timeout=20000 --test-force-exit --experimental-test-coverage --test-coverage-include=\"src/**\" \"tests/**/*.test.js\"",
+    "mutation": "stryker run",
+    "perf": "node --no-warnings=ExperimentalWarning perf/qr01-bench.js"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "qrcode": "1.5.4",
+    "ws": "8.18.0"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "8.7.1",
+    "jsqr": "1.4.0",
+    "pngjs": "7.0.0"
+  }
+}
