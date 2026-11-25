@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QRMOS Manager</title>
+  <link rel="stylesheet" href="/shared/style.css">
+  <link rel="stylesheet" href="/staff/staff.css">
+  <style>
+    main { max-width: 1000px; margin: 0 auto; }
+    h2 { margin: 24px 0 10px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    th { background: #efebe1; font-size: 14px; }
+    td input[type=number] { width: 110px; }
+    .form { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 14px; }
+    .tables { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .tcard { padding: 12px; text-align: center; }
+    .tcard img { width: 160px; height: 160px; }
+    .tcard .url { font-size: 12px; word-break: break-all; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <strong>QRMOS · Manager</strong><span class="spacer"></span>
+    <a class="btn small" href="/staff">Staff queue</a>
+  </header>
+  <main>
+    <div id="err" class="error hidden" role="alert"></div>
+
+    <h2>Menu items</h2>
+    <div class="panel" style="overflow-x:auto"><table id="items"></table></div>
+    <h2>Add an item</h2>
+    <form id="addItem" class="panel form">
+      <div><label for="nName">Name</label><input id="nName" type="text" required></div>
+      <div><label for="nNameEs">Name (Spanish)</label><input id="nNameEs" type="text"></div>
+      <div><label for="nCat">Category</label><select id="nCat"></select></div>
+      <div><label for="nPrice">Price ($)</label><input id="nPrice" type="number" min="0" step="0.01" required></div>
+      <div style="grid-column:1/-1"><label for="nDesc">Description</label><input id="nDesc" type="text"></div>
+      <div><label for="nAll">Allergens (comma separated)</label><input id="nAll" type="text" placeholder="milk, tree nuts"></div>
+      <div style="align-self:end"><button class="btn primary" type="submit">Add item</button></div>
+    </form>
+
+    <h2>Tables and QR codes</h2>
+    <form id="addTable" class="panel form">
+      <div><label for="tNum">Table number</label><input id="tNum" type="number" min="1" required></div>
+      <div style="align-self:end"><button class="btn primary" type="submit">Add table</button></div>
+    </form>
+    <div id="tables" class="tables" style="margin-top:14px"></div>
+  </main>
+  <script src="/manager/manager.js"></script>
+</body>
+</html>
